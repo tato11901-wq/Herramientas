@@ -1,4 +1,4 @@
-# 🛠️ Las Sagradas Herramientas 🛠️
+#  Las Sagradas Herramientas 
 
 Bienvenidos, simples mortales, a mi bóveda personal de utilidades supremas. 
 
@@ -6,7 +6,7 @@ Este repositorio fue creado estricta y egoístamente para mi propio beneficio y 
 
 De nada.
 
-## 📦 Inventario de Reliquias (Hasta el momento)
+##  Inventario de Reliquias (Hasta el momento)
 
 ### 1. 🚀 AstroCreator (`AstroCreator.py`)
 ¿Cansado de perder valiosos segundos de tu vida configurando proyectos en Astro una y otra vez? Yo sí lo estaba. 
@@ -19,7 +19,7 @@ Este script es un hechicero de línea de comandos (y con toques de interfaz grá
 **Uso:** 
 Ejecútalo en tu terminal (`python AstroCreator.py`), responde un par de preguntas y observa cómo el universo de tu entorno de trabajo se alinea a tu favor en cuestión de segundos.
 
-### 2. 📴 Apagador de PC Implacable (`ApagarPC.py`)
+### 2. Apagador de PC Implacable (`ApagarPC.py`)
 Ideal para esos momentos en los que usas tu PC como televisor desde la cama. Si eres como yo y te quedas dormido viendo series o videos, pero te niegas a dejar la pobre PC encendida gastando luz toda la noche, esta es tu salvación. 
 Este script es un temporizador implacable que programa el apagado automático de tu computadora. Cuenta con su propia interfaz, contadores actualizados en tiempo real y alertas que te avisan exactamente cuánto tiempo te queda de existencia virtual antes de que todo se vuelva oscuridad.
 
