@@ -26,6 +26,13 @@ Este script es un temporizador implacable que programa el apagado automático de
 **Uso:**
 Ejecútalo (`python ApagarPC.py`), define tu destino y prepárate para el inminente final de tu sesión.
 
+
+### 3. 📹 YouTube Downloader (`yt_downloader/main.py`)
+
+Originalmente, siempre usaba una pagina para descargar mp3/mp4 de youtube, la pagina estaba plagada de anuncios y se demoraba cargando, aun así le tenía cariño, ¿Pueden creer que la cerraron? Después de unos muy intensos 5 minutos de busqueda para poder utilizar otra página, me entró la curiosidad de cómo funcionan dichas páginas, por lo que decidí montar una app yo mismo, Y sin anuncios, y encima con funcionamiento local :D 
+
+La app esta hecha con python y funciona con `yt-dlp` para la descarga de videos, necesitas instalar ffmpeg para poder usar la app (se puede descargar con winget o chocolatey). 
+
 ---
 
 *Nota legal y moral: Usar bajo su propio riesgo. Si alguna de estas herramientas domina el mundo, no me hago responsable. Disfruten mi benevolencia.*
