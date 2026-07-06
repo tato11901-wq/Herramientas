@@ -124,23 +124,19 @@ def download_media(url, format_type, quality, download_path, progress_callback=N
                     'preferredquality': '192' if quality == 'Alta' else '128',
                 }]
             else: # Video MP4
-                # Priorizamos formatos pre-mezclados para no depender de ffmpeg,
-                # pero si está disponible usamos la mejor calidad con merge.
-                if FFMPEG_LOCATION:
-                    if quality == "Alta":
-                        ydl_opts['format'] = 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best'
-                    elif quality == "Media":
-                        ydl_opts['format'] = 'bestvideo[height<=720][ext=mp4]+bestaudio[ext=m4a]/best[height<=720][ext=mp4]/best'
-                    else:
-                        ydl_opts['format'] = 'bestvideo[height<=480][ext=mp4]+bestaudio[ext=m4a]/best[height<=480][ext=mp4]/best'
+                ydl_opts['merge_output_format'] = 'mp4'
+
+                if quality == "Alta":
+                    ydl_opts['format'] = "bestvideo[vcodec~='^avc1'][ext=mp4]+bestaudio[acodec=mp4a][ext=m4a]/bestvideo[vcodec~='^avc'][ext=mp4]+bestaudio[ext=m4a]/best"
+                elif quality == "Media":
+                    ydl_opts['format'] = "bestvideo[height<=720][vcodec~='^avc1'][ext=mp4]+bestaudio[acodec=mp4a][ext=m4a]/bestvideo[height<=720][vcodec~='^avc'][ext=mp4]+bestaudio[ext=m4a]/best[height<=720]"
                 else:
-                    # Sin ffmpeg: solo formatos ya mezclados
-                    if quality == "Alta":
-                        ydl_opts['format'] = 'best[ext=mp4]/best'
-                    elif quality == "Media":
-                        ydl_opts['format'] = 'best[height<=720][ext=mp4]/best[height<=720]'
-                    else:
-                        ydl_opts['format'] = 'best[height<=480][ext=mp4]/best[height<=480]'
+                    ydl_opts['format'] = "bestvideo[height<=480][vcodec~='^avc1'][ext=mp4]+bestaudio[acodec=mp4a][ext=m4a]/bestvideo[height<=480][vcodec~='^avc'][ext=mp4]+bestaudio[ext=m4a]/best[height<=480]"
+
+                ydl_opts['postprocessors'] = [{
+                    'key': 'FFmpegVideoConvertor',
+                    'preferedformat': 'mp4',
+                }]
 
             # Hook de progreso
             def my_hook(d):
